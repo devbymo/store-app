@@ -1,13 +1,15 @@
 import express from 'express'
-import index from '../../../controllers/users'
-import create from '../../../controllers/users/create'
-import login from '../../../controllers/users/login'
 import auth from '../../../middlewares/auth'
+import index from '../../../controllers/users/index'
+import create from '../../../controllers/users/create'
+import show from '../../../controllers/users/show'
+import authenticate from '../../../controllers/users/authenticate'
 
 const routes = express.Router()
 
-routes.get('/', index)
+routes.get('/:id', auth, show)
+routes.get('/', auth, index)
 routes.post('/', create)
-routes.post('/login', login)
+routes.post('/authenticate', authenticate)
 
 export default routes

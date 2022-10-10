@@ -11,6 +11,7 @@ const client = new Pool({
   host: POSTGRES_HOST,
   database: NODE_ENV === 'test' ? POSTGRES_DB_TEST : POSTGRES_DB,
   password: POSTGRES_PASSWORD,
+  max: 5,
 })
 
 export default client

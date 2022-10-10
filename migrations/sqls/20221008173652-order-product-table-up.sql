@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS order_products (
   order_id uuid NOT NULL,
   product_id uuid NOT NULL,
   quantity INTEGER NOT NULL,
-  FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
-  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE
+  FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE ON UPDATE CASCADE
 );

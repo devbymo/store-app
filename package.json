@@ -11,10 +11,10 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts",
     "migration:create": "db-migrate create test-table --sql-file",
-    "migration:up": "db-migrate up",
-    "migration:down": "db-migrate down",
-    "migration:reset": "db-migrate reset",
-    "test": "db-migrate --env test up && npx tsc && cross-env NODE_ENV=test jasmine && db-migrate --env test down"
+    "migration:up": "db-migrate --env dev up",
+    "migration:down": "db-migrate --env dev down",
+    "migration:reset": "db-migrate --env dev reset",
+    "test": "db-migrate --env test up && npx tsc && cross-env NODE_ENV=test jasmine && db-migrate --env test reset"
   },
   "repository": {
     "type": "git",
@@ -36,7 +36,8 @@
     "helmet": "^6.0.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.8.0",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "validator": "^13.7.0"
   },
   "keywords": [],
   "devDependencies": {
@@ -48,6 +49,7 @@
     "@types/node": "^16.11.12",
     "@types/pg": "^8.6.5",
     "@types/supertest": "^2.0.11",
+    "@types/validator": "^13.7.7",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "cross-env": "^7.0.3",

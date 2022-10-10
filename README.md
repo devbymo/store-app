@@ -68,8 +68,9 @@ CREATE DATABASE store_test;
 
 ## API endpoints
 ### Users
-* Create new user `http://localhost:3000/api/v1/users [POST]`
-* Request Body
+* Create new user `http://localhost:3000/api/v1/users [POST]` (generate token)
+* Required:
+1 Request Body
 ```
 {
   "email": "mohamed@gmail.com",
@@ -79,11 +80,23 @@ CREATE DATABASE store_test;
 }
 ```
 
+* Authenticate user `http://localhost:3000/api/v1/users/authenticate [POST]` (generate token)
+* Required:
+1 Request Body
+```
+{
+  "email": "mohamed@gmail.com",
+  "password": "123456",
+}
+```
+
 * Show user `http://localhost:3000/api/v1/users/:userId [GET]` (authentication required)
-* Bearer Token `Bearer [token]`
+* Required:
+1 Bearer Token `Bearer [token]`
 
 * Index users `http://localhost:3000/api/v1/users [GET]` (authentication required)
-* Bearer Token `Bearer [token]`
+* Required:
+1 Bearer Token `Bearer [token]`
 
 ### Products
 

@@ -103,7 +103,7 @@ CREATE DATABASE store_test;
 ```
 {
   "email": "mohamed@gmail.com",
-  "password": "123456",
+  "password": "123456"
 }
 ```
 

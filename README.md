@@ -78,11 +78,12 @@ CREATE DATABASE store_test;
   "last_name": "Yasser"
 }
 ```
+
 * Show user `http://localhost:3000/api/v1/users/:userId [GET]` (authentication required)
-* Bearer Token 
-```
-Bearer [token]
-```
+* Bearer Token `Bearer [token]`
+
+* Index users `http://localhost:3000/api/v1/users [GET]` (authentication required)
+* Bearer Token `Bearer [token]`
 
 ### Products
 

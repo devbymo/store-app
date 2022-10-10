@@ -34,6 +34,8 @@ JWT_EXPIRES_IN=1d
 ### DB Creation
 **NOTE:** You should create 2 databases locally in your PC
 ```
+psql -U YOUR-USERNAME
+Password: ....
 CREATE DATABASE store_dev;
 CREATE DATABASE store_test;
 ```

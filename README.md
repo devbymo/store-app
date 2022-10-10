@@ -67,6 +67,21 @@ CREATE DATABASE store_test;
 `npm run test`
 
 ## API endpoints
+* Success response format
+```
+{
+  "message": "order found",
+  "status": "success",
+  "data": ...
+}
+```
+* Error response format
+```
+{
+  "message": "authorization denied",
+  "status": "error"
+}
+```
 ### Users
 * Create new user `http://localhost:3000/api/v1/users [POST]` (generate token)
 * Required:
@@ -99,8 +114,42 @@ CREATE DATABASE store_test;
 1. Bearer Token `Bearer [token]`
 
 ### Products
+* Create product `http://localhost:3000/api/v1/products [POST]` (authentication required)
+* Required:
+1. Bearer Token `Bearer [token]`
+2. Request Body
+```
+{
+  "name": "product 99",
+  "price": 20,
+  "category": "tech"
+}
+```
+
+* Show product `http://localhost:3000/api/v1/products/:productId [GET]`
+
+* Index product `http://localhost:3000/api/v1/products [GET]`
 
 ### Orders
+* Create Order `http://localhost:3000/api/v1/orders [POST]`
+* Required:
+1. Request Body
+```
+{
+  "userId": "c5b9a9fc-cc7f-466c-8fac-c48a19f77aa8",
+  "productId": "1f6751f5-8f4e-4208-a48d-366ae7f00aef",
+  "quantity": 99,
+  "status": "completed"
+}
+```
 
+* Index Orders by user id & status `http://localhost:3000/api/v1/orders/user/:userId [GET]`
+* Optional:
+1. Request Body
+```
+{
+  "status": "completed" // Or active for filter orders
+}
+```
 
 

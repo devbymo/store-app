@@ -1,6 +1,6 @@
 # STORE APP API
 ## Getting started
-**NOTE:** First of all you should have postgress DB, node.js install locally in your PC
+**NOTE:** First of all you should have postgress DB, node.js installed locally in your PC
 
 ### Env required
 **EX**

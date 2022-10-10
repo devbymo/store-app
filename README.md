@@ -67,6 +67,26 @@ CREATE DATABASE store_test;
 `npm run test`
 
 ## API endpoints
+### Users
+* Create new user `http://localhost:3000/api/v1/users [POST]`
+* Request Body
+```
+{
+  "email": "mohamed@gmail.com",
+  "password": "123456",
+  "first_name": "Mohamed",
+  "last_name": "Yasser"
+}
+```
+* Show user `http://localhost:3000/api/v1/users/:userId [GET]` (authentication required)
+* Bearer Token 
+```
+Bearer [token]
+```
+
+### Products
+
+### Orders
 
 
 

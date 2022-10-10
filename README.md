@@ -1,8 +1,6 @@
 # STORE APP API
 ## Getting started
 **NOTE:** First of all you should have postgress DB, node.js install locally in your PC
-### Installation Steps
-`npm install`
 
 ### Env required
 **EX**
@@ -29,6 +27,10 @@ BCRYPT_PASSWORD_PEPPER=secret
 JWT_SECRET=secret
 JWT_EXPIRES_IN=1d
 ```
+
+### Installation Steps
+`npm install`
+
 ### DB Creation
 **NOTE:** You should create 2 databases locally in your PC
 ```

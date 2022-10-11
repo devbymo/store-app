@@ -1,4 +1,5 @@
 # STORE APP API
+**UDACITY REVIEW:** https://review.udacity.com/#!/reviews/3748992
 ## Getting started
 **NOTE:** First of all you should have postgress DB, node.js installed locally in your PC
 

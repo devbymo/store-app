@@ -29,9 +29,6 @@ JWT_SECRET=secret
 JWT_EXPIRES_IN=1d
 ```
 
-### Installation Steps
-`npm install`
-
 ### DB Creation
 **NOTE:** You should create 2 databases locally in your PC
 ```
@@ -40,37 +37,24 @@ Password: ....
 CREATE DATABASE store_dev;
 CREATE DATABASE store_test;
 ```
-### Run Migrations
-* up migration
-`npm run migration:up`
-* down migration
-`npm run migration:down`
-* reset migration
-`npm run migration:reset`
 
-### Start Server (dev)
-`npm run dev`
+### Installation Steps
 
-### Start Server (prod)
-`npm run start`
-
-### Clean
-`npm run clean`
-
-### Build the project
-`npm run build`
-
-### Format Code
-`npm run format`
-
-### Run ESLint
-`npm run lint`
-
-### Run Test
-`npm run test`
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. up migration `npm run migration:up`
+4. down migration `npm run migration:down`
+5. reset migration `npm run migration:reset`
+6. Run `npm start` to start the server
+7. Run `npm test` to run the tests
+8. Run `npm run dev` to start the server in development mode
+9. Run `npm run lint` to run the linter
+10. Run `npm run format` to format the code using Prettier
+11. Run `npm run build` to build the project for production
+12. Run `npm run clean` to remove the build directory
 
 ## API endpoints
-* Success response format
+* Success response format ✅
 ```
 {
   "message": "order found",
@@ -78,14 +62,33 @@ CREATE DATABASE store_test;
   "data": ...
 }
 ```
-* Error response format
+* Error response format ❌
 ```
 {
   "message": "authorization denied",
   "status": "error"
 }
 ```
+
 ### Users
+
+- `POST /api/v1/users` - Create new user ✅
+- `POST /api/v1/users/authenticate ` - Authenticate user ✅
+- `GET /api/v1/users/:userId ` - Show user ✅
+- `GET /api/v1/users ` - Index users ✅
+
+## Products
+
+- `GET /api/v1/products` - Index products ✅
+- `POST /api/v1/products` - Create a product ✅
+- `GET /api/v1/products/:productId` - Show product ✅
+
+## orders
+
+- `POST /api/v1/orders` - Create Order ✅
+- `GET /api/v1/orders/user/:userId` - Index Orders by user id & status (req body) ✅
+
+### Users endpoints in details
 * Create new user `http://localhost:3000/api/v1/users [POST]` (generate token)
 * Required:
 1. Request Body
@@ -115,8 +118,8 @@ CREATE DATABASE store_test;
 * Index users `http://localhost:3000/api/v1/users [GET]` (authentication required)
 * Required:
 1. Bearer Token `Bearer [token]`
-
-### Products
+ 
+### Products endpoints in details
 * Create product `http://localhost:3000/api/v1/products [POST]` (authentication required)
 * Required:
 1. Bearer Token `Bearer [token]`
@@ -133,7 +136,7 @@ CREATE DATABASE store_test;
 
 * Index product `http://localhost:3000/api/v1/products [GET]`
 
-### Orders
+### Orders endpoints in details
 * Create Order `http://localhost:3000/api/v1/orders [POST]`
 * Required:
 1. Request Body
